@@ -7,15 +7,15 @@ import { Contacto } from './paginas/contacto/contacto';
 import { Ofertas } from './paginas/ofertas/ofertas';
 import { Productos } from './paginas/productos/productos';
 export const routes: Routes = [
-    {path: '', redirectTo: 'inicio', pathMatch: 'full' },
-    {path: 'inicio', component: Inicio},
-    {path: 'registro', component: Registro},
-    {path: 'carrito', component: Carrito},
-    {path: 'favoritos', component: Favoritos},
-    {path: 'contacto', component: Contacto},
-    {path: 'ofertas', component: Ofertas},
-    {path: 'productos', component: Productos},
-    {path: '***', redirectTo: 'inicio'},
+    {path: '', redirectTo: 'Inicio', pathMatch: 'full' },
+    {path: 'Inicio', component: Inicio},
+    {path: 'Registro', component: Registro},
+    {path: 'Carrito', component: Carrito},
+    {path: 'Favoritos', component: Favoritos},
+    {path: 'Contacto', component: Contacto},
+    {path: 'Ofertas', component: Ofertas},
+    {path: 'Productos', component: Productos},
+    {path: '***', redirectTo: 'Inicio'},
 
 ];
 //cambiar las rutas
