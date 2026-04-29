@@ -16,6 +16,6 @@ export const routes: Routes = [
     {path: 'Ofertas', component: Ofertas},
     {path: 'Productos', component: Productos},
     {path: '***', redirectTo: 'Inicio'},
-
+    
 ];
 //cambiar las rutas
