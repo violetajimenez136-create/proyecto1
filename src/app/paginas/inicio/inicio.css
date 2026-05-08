@@ -1,15 +1,86 @@
-.cartasinicio{
-    width: 100%;
-    height: 500px;
-     display: flex;
-     gap: 20px;
+
+/* 1. Contenedor principal: Usamos Flexbox para que las cartas se alineen bien */
+.cartasinicio {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
     justify-content: center;
+    padding: 20px;
 }
-#imginicio{
-    width: 100%;
-    height: 400px;
+
+/* 2. Estilo base de la carta */
+.card {
+    border: none; /* Quitamos bordes rígidos */
+    border-radius: 15px; /* Bordes redondeados más modernos */
+    overflow: hidden;
+    background: #fff;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Transición suave con rebote */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra inicial sutil */
+    cursor: pointer;
 }
-#carrusel{
-    width: 100%;
-    height: 100%;
+
+/* 3. EFECTO DE MOVIMIENTO (Hover) */
+.card:hover {
+    transform: translateY(-15px); /* La carta sube 15px */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); /* La sombra crece para dar efecto de altura */
 }
+
+/* 4. Movimiento de la imagen interna */
+/* 4. Movimiento de la imagen interna (AJUSTADO PARA NO RECORTAR) */
+#imginicio {
+    transition: transform 0.5s ease;
+    
+    /* El truco principal: */
+    width: 100%;             /* La imagen ocupa el ancho de la carta */
+    height: 250px;           /* Forzamos a que todos los contenedores midan lo mismo */
+    object-fit: contain;     /* Muestra la imagen COMPLETA dentro de los 250px */
+    
+    /* Estética: */
+    background-color: #fff;  /* Fondo blanco por si la imagen es más angosta que la carta */
+    padding: 15px;           /* Un pequeño aire para que la bota no toque los bordes */
+}
+
+/* Mantenemos el efecto de zoom pero ahora sobre la imagen completa */
+.card:hover #imginicio {
+    transform: scale(1.1); 
+}
+
+.card:hover #imginicio {
+    transform: scale(1.1); /* La imagen hace un pequeño zoom suave al entrar */
+}
+
+/* 5. Estilo dinámico para el botón */
+.boton {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border-radius: 25px;
+    padding: 10px 20px;
+    border: none;
+}
+
+.boton:hover {
+    filter: brightness(1.2); /* Brilla un poco */
+    transform: scale(1.05); /* Crece ligeramente al poner el mouse sobre el botón */
+}
+
+/* 6. Animación de entrada (opcional) 
+   Hace que las cartas aparezcan de abajo hacia arriba al cargar la página */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: fadeInUp 0.6s ease-out both;
+}
+
+/* Retraso de animación para cada carta (efecto cascada) */
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+.card:nth-child(4) { animation-delay: 0.4s; }

@@ -1,5 +1,98 @@
-#formularioregistro{
-    width: 500px;
-    height: 500px;
-    
+/* 1. Fondo del cuerpo para resaltar el formulario */
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 2. Estilo del contenedor del formulario */
+#formularioregistro {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    transition: transform 0.3s ease;
+}
+
+#formularioregistro:hover {
+    transform: translateY(-5px); /* Pequeña elevación al interactuar */
+}
+
+/* 3. Etiquetas (Labels) */
+.form-label {
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+}
+
+/* 4. Campos de entrada (Inputs) */
+.form-control {
+    border: 2px solid #eee;
+    border-radius: 10px;
+    padding: 12px;
+    transition: all 0.3s ease;
+}
+
+/* Efecto dinámico al hacer click en el input */
+.form-control:focus {
+    border-color: #764ba2;
+    box-shadow: 0 0 0 4px rgba(118, 75, 162, 0.1);
+    transform: scale(1.02); /* El campo crece ligeramente */
+}
+
+/* 5. Estilo del Checkbox */
+.form-check {
+    margin: 20px 0;
+}
+
+.form-check-input:checked {
+    background-color: #764ba2;
+    border-color: #764ba2;
+}
+
+/* 6. El Botón Enviar (Dinámico) */
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(to right, #667eea, #764ba2);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(to right, #764ba2, #667eea);
+    box-shadow: 0 8px 15px rgba(118, 75, 162, 0.3);
+    transform: scale(1.05); /* Efecto de pulso */
+}
+
+.btn-primary:active {
+    transform: scale(0.98); /* Efecto de hundimiento al clickear */
+}
+
+/* 7. Animación de entrada para todo el formulario */
+@keyframes fadeInForm {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#formularioregistro {
+    animation: fadeInForm 0.6s ease-out;
 }

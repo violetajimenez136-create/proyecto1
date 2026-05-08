@@ -1,0 +1,120 @@
+.divcontacto{
+    background-color: rgb(255, 255, 255);
+    height: 200px;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+}
+/* ============================================================
+   CONTENEDOR PRINCIPAL (El área que envuelve ambas tarjetas)
+   ============================================================ */
+.vtex-flex-layout-0-x-flexRowContent--contact-cards-container {
+    gap: 20px;               /* Espacio de separación entre la tarjeta de IG y la de WP */
+    padding: 40px 20px;      /* Margen interno: 40px arriba/abajo y 20px a los lados */
+    background-color: #f9f9f9; /* Color de fondo gris muy claro para generar contraste con las tarjetas blancas */
+}
+
+/* ============================================================
+   ESTILO BASE DE LAS TARJETAS (Cuerpo de cada recuadro)
+   ============================================================ */
+.vtex-flex-layout-0-x-flexCol--contact-cards {
+    background: #ffffff;      /* Fondo blanco puro */
+    border-radius: 12px;      /* Bordes redondeados para un look moderno */
+    padding: 30px;            /* Espacio entre el borde de la tarjeta y el texto interno */
+    text-align: center;       /* Centra todos los textos dentro de la tarjeta */
+    transition: all 0.3s ease; /* Suaviza cualquier cambio (color, posición) para que no sea brusco */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Sombra muy suave para dar sensación de profundidad */
+    border: 1px solid #eee;   /* Borde gris casi invisible para definir la forma */
+    display: flex;            /* Activa el modo caja flexible */
+    flex-direction: column;   /* Apila los elementos (título, texto, botón) hacia abajo */
+    justify-content: space-between; /* Distribuye el contenido para que el botón siempre quede abajo */
+    align-items: center;      /* Centra horizontalmente los elementos hijos */
+}
+
+/* --- EFECTO HOVER (Cuando el usuario pasa el mouse por encima) --- */
+.vtex-flex-layout-0-x-flexCol--contact-cards:hover {
+    transform: translateY(-10px); /* Hace que la tarjeta "suba" 10 píxeles */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12); /* Aumenta la sombra para que parezca que está más lejos del fondo */
+    border-color: #000;       /* Cambia el borde a negro para resaltar la tarjeta activa */
+}
+
+/* ============================================================
+   TEXTOS (Títulos y Descripciones)
+   ============================================================ */
+   
+/* Títulos (H3) */
+.vtex-rich-text-0-x-heading--contact-card-title {
+    font-family: 'Helvetica', sans-serif; /* Tipografía limpia y profesional */
+    font-weight: 700;          /* Grosor de letra negrita (Bold) */
+    font-size: 1.25rem;        /* Tamaño de fuente mediano-grande */
+    letter-spacing: 1px;       /* Un poco de aire entre letras para estilo premium */
+    margin-bottom: 15px;       /* Espacio entre el título y el párrafo de abajo */
+    color: #111;               /* Color de texto casi negro */
+    text-transform: uppercase; /* Convierte todo el texto a MAYÚSCULAS */
+}
+
+/* Descripciones (Párrafos) */
+.vtex-rich-text-0-x-paragraph--contact-card-desc {
+    font-size: 0.95rem;        /* Tamaño de letra ligeramente más pequeño que el estándar */
+    color: #666;               /* Gris medio para que no compita visualmente con el título */
+    line-height: 1.6;          /* Espacio entre líneas de texto para mejorar la lectura */
+    margin-bottom: 25px;       /* Espacio antes de llegar al botón */
+    min-height: 50px;          /* Altura mínima para que si un texto es corto, la tarjeta no se achique */
+}
+
+/* ============================================================
+   BOTONES (CTAs - Llamados a la acción)
+   ============================================================ */
+
+/* Estilo General compartido por ambos botones */
+.vtex-store-link-0-x-link--contact-card-cta {
+    display: inline-block;     /* Permite aplicar márgenes y rellenos correctamente */
+    padding: 12px 30px;        /* Tamaño del botón: 12px arriba/abajo, 30px laterales */
+    border-radius: 50px;       /* Botones tipo "píldora" (totalmente redondeados) */
+    text-decoration: none;     /* Quita el subrayado clásico de los enlaces */
+    font-weight: 600;          /* Letra semi-negrita */
+    font-size: 0.85rem;        /* Tamaño de fuente compacto */
+    transition: background 0.3s ease, transform 0.2s ease; /* Transiciones suaves para el color y tamaño */
+    width: fit-content;        /* El ancho se adapta al texto "Ir al WhatsApp/Instagram" */
+}
+
+/* --- BOTÓN INSTAGRAM (Estilo Negro) --- */
+.vtex-store-link-0-x-link--contact-ig {
+    background: #000;          /* Fondo negro */
+    color: #fff !important;    /* Texto blanco (el !important asegura que VTEX no lo cambie) */
+    border: 1px solid #000;    /* Borde negro */
+}
+
+.vtex-store-link-0-x-link--contact-ig:hover {
+    background: transparent;   /* Al pasar el mouse, el fondo se vuelve transparente */
+    color: #000 !important;    /* El texto cambia a negro (Efecto Invertido) */
+}
+
+/* --- BOTÓN WHATSAPP (Estilo Verde) --- */
+.vtex-store-link-0-x-link--contact-wp {
+    background: #25D366;       /* Color verde oficial de WhatsApp */
+    color: #fff !important;    /* Texto blanco */
+    border: 1px solid #25D366; /* Borde verde */
+}
+
+.vtex-store-link-0-x-link--contact-wp:hover {
+    background: #128C7E;       /* Un verde más oscuro al pasar el mouse */
+    border-color: #128C7E;     /* Sincroniza el borde con el nuevo fondo */
+    transform: scale(1.05);    /* Hace que el botón crezca un 5% al tocarlo */
+}
+
+/* ============================================================
+   RESPONSIVE (Ajustes para Celulares)
+   ============================================================ */
+@media (max-width: 768px) {
+    /* Cuando la pantalla es menor a 768px (móviles)... */
+    .vtex-flex-layout-0-x-flexRowContent--contact-cards-container {
+        flex-direction: column; /* Cambia de "uno al lado del otro" a "uno arriba del otro" */
+        padding: 20px;          /* Reduce el margen interno para ganar espacio */
+    }
+    
+    .vtex-flex-layout-0-x-stretchChildrenWidth {
+        width: 100% !important; /* Obliga a que cada tarjeta ocupe todo el ancho disponible */
+        margin-bottom: 15px;    /* Separa las tarjetas verticalmente */
+    }
+}
