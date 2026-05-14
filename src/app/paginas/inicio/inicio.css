@@ -50,18 +50,60 @@
 }
 
 /* 5. Estilo dinámico para el botón */
+/* 1. Estilo base del botón: Minimalismo Neutro */
 .boton {
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    border-radius: 25px;
-    padding: 10px 20px;
-    border: none;
+    /* Colores Neutros: Elegimos un gris oscuro profundo o un "off-white" */
+    background-color: #262626; 
+    color: #ffffff;
+    
+    /* Tipografía y Espaciado */
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 12px 28px;
+    
+    /* Bordes y Estructura */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px; /* Estilo cápsula */
+    cursor: pointer;
+    outline: none;
+    
+    /* Sombras: El secreto para que sea atrayente */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+    /* Transiciones: Suavidad total */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
 }
 
+/* 2. Interacción dinámica (Hover) */
 .boton:hover {
-    filter: brightness(1.2); /* Brilla un poco */
-    transform: scale(1.05); /* Crece ligeramente al poner el mouse sobre el botón */
+    background-color: #000000; /* Oscurece un poco más */
+    color: #ffffff;
+    transform: translateY(-3px) scale(1.05); /* Sube y crece ligeramente */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* La sombra aumenta al "elevarse" */
+    filter: brightness(1.1);
 }
 
+/* 3. Efecto de "Click" (Active) */
+.boton:active {
+    transform: translateY(1px) scale(0.98); /* Se hunde ligeramente al presionar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 4. Estilo alternativo: Neutro Claro (Opcional) */
+.boton-claro {
+    background-color: #f5f5f7;
+    color: #1d1d1f;
+    border: 1px solid #d2d2d7;
+}
+
+.boton-claro:hover {
+    background-color: #ffffff;
+    border-color: #86868b;
+}
 /* 6. Animación de entrada (opcional) 
    Hace que las cartas aparezcan de abajo hacia arriba al cargar la página */
 @keyframes fadeInUp {
@@ -84,3 +126,63 @@
 .card:nth-child(2) { animation-delay: 0.2s; }
 .card:nth-child(3) { animation-delay: 0.3s; }
 .card:nth-child(4) { animation-delay: 0.4s; }
+/* 1. Contenedor del Carrusel */
+#carouselExampleFade {
+    width: 100%;
+    max-width: 1200px; /* Opcional: limita el ancho máximo para que no se pixele el contenido */
+    margin: 20px auto;
+    border-radius: 25px; /* Bordes redondeados modernos */
+    overflow: hidden;    /* Corta las esquinas de las fotos para que sigan el radio */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2); /* Sombra profunda para dar relieve */
+}
+
+/* 2. Control de Tamaño Uniforme */
+.carousel-inner .carousel-item {
+    height: 500px; /* Define una altura fija para todas las imágenes */
+    background-color: #000; /* Fondo negro por si la imagen es pequeña */
+}
+
+.carousel-inner .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* CLAVE: Ajusta la imagen al contenedor sin deformarla */
+    object-position: center; /* Centra la bota o modelo en el encuadre */
+    transition: transform 5s ease-in-out; /* Efecto de zoom lento constante */
+}
+
+/* 3. Efecto "Ken Burns" (Zoom sutil al estar activa) */
+.carousel-item.active img {
+    transform: scale(1.1); /* La imagen activa crece suavemente */
+}
+
+/* 4. Estilo de los Botones de Navegación */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%; /* Botones más sutiles */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#carouselExampleFade:hover .carousel-control-prev,
+#carouselExampleFade:hover .carousel-control-next {
+    opacity: 1; /* Los botones aparecen solo cuando pasas el mouse */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0,0,0,0.5); /* Círculo oscuro detrás de la flecha */
+    border-radius: 50%;
+    padding: 20px;
+    background-size: 50%;
+}
+
+/* 5. Overlay (Capa oscura sobre la imagen para resaltar contenido) */
+.carousel-item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.4));
+}
