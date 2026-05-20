@@ -1,1 +1,33 @@
 <p>carrito works!</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">producto</th>
+      <th scope="col">precio unitario</th>
+      <th scope="col">cantidad</th>
+      <th scope="col">subtotal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">{{p.nombre}}</th>
+      <td> <button type="button">-</button></td>
+      <td>{{p.cantidad}}</td>
+      <td> <button type="button">+</button></td>
+      <td>{{p.precio}}</td>
+      <td>{{p.total}}</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>John</td>
+      <td>Doe</td>
+      <td>@social</td>
+    </tr>
+  </tbody>
+</table>
