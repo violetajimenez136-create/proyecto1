@@ -109,3 +109,94 @@
 .cartasdeproductos .card {
     animation: fadeInUp 0.6s ease backwards;
 }
+
+/* ==========================================================================
+   1. Control de Simetría en las Tarjetas (.card)
+   ========================================================================== */
+.cartasdeproductos .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Empuja el contenido equitativamente */
+    height: 100%;                   /* Obliga a todas las tarjetas a medir lo mismo */
+    min-height: 480px;              /* Altura mínima garantizada para la simetría */
+    background: #ffffff;
+    border-radius: 20px;
+    border: none;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Efecto hover en la tarjeta */
+.cartasdeproductos .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Cuerpo de la tarjeta: distribuye el texto y los botones */
+.cartasdeproductos .card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;                   /* Absorbe el espacio sobrante */
+    justify-content: space-between; /* Mantiene los botones siempre abajo del todo */
+}
+
+/* ==========================================================================
+   2. Nuevo Contenedor de Botones (Fila Única y Separación)
+   ========================================================================== */
+.contenedor-acciones {
+    display: flex;
+    gap: 12px;                      /* Separación exacta y prolija entre botones */
+    width: 100%;
+    margin-top: auto;               /* Alineación perfecta en la base de la tarjeta */
+}
+
+/* ==========================================================================
+   3. Estilo de los Botones (Blanco y Negro / Premium)
+   ========================================================================== */
+.btn-carrito, .btn-favoritos {
+    flex: 1;                        /* Hace que ambos botones midan exactamente lo mismo */
+    padding: 12px 15px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 50px;            /* Forma de píldora estética */
+    transition: all 0.3s ease;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Botón Carrito: Base Blanca, Texto Negro */
+.btn-carrito {
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid #000000;
+}
+
+.btn-carrito:hover {
+    background-color: #000000;
+    color: #ffffff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Botón Favoritos: Base Negra, Texto Blanco (Contraste) */
+.btn-favoritos {
+    background-color: #000000;
+    color: #ffffff;
+    border: 2px solid #000000;
+}
+
+.btn-favoritos:hover {
+    background-color: #ffffff;
+    color: #000000;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Efecto de pulsación */
+.btn-carrito:active, .btn-favoritos:active {
+    transform: scale(0.96);
+}

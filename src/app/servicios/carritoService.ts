@@ -7,13 +7,19 @@ import { Producto } from '../models/producto';
 export class carritoService {
   Carrito: Producto[] = [];
 
-añadirProducto(p: Producto): void {
-    this.Carrito.push(p);
+  aniadirProducto(p: Producto) {
+    const existente = this.Carrito.find(prod => prod.id === p.id)
+    if (existente) {
+      p.cantidad++
+    } else {
+      this.Carrito.push(p);
+
+    }
   }
-  obtenerProducto(): Producto []{
+  obtenerProducto(): Producto[] {
     return this.Carrito;
   }
-  
+
   aumentarCantidad(id: number): void {
 
     const producto = this.Carrito.find(p => p.id === id);
@@ -23,15 +29,14 @@ añadirProducto(p: Producto): void {
 
   }
 
-  disminuirCantidad(id: number): void{
+  disminuirCantidad(id: number): void {
     const producto = this.Carrito.find(p => p.id === id);
     if (producto && producto.cantidad > 1) {
       producto.cantidad--;
     }
 
   }
-  eliminarProducto(id : number): void {
-this.Carrito = this.Carrito.filter(p => p.id !== id);
-   
-}
+  eliminarProducto(id: number): void {
+    this.Carrito = this.Carrito.filter(p => p.id !== id);
+  }
 }

@@ -1,1 +1,21 @@
-<p>favoritos works!</p>
+@if(Favoritos.length === 0){
+  <p>el carrito esta vacio</p>
+}@else{
+  <table class="table">                                                                                
+  <thead>
+    <tr>
+      <th scope="col">producto</th>
+      <th scope="col">precio</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for(p of Favoritos; track p.id){
+    <tr>
+      <th scope="row">{{p.nombre}}</th>
+      <td><img src="assets/{p.imagen}" alt="p.nombre"></td>
+      <td><button (click)="eliminarFav(p.id)">🚮</button></td>
+    </tr>
+  }
+</tbody>
+</table>
+}
