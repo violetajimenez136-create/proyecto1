@@ -23,7 +23,7 @@
       <td>{{p.cantidad}}</td>
       <td> <button type="button" (click)="aumentarCantidad(p.id)">+</button></td>
       <td><button (click)="eliminarProducto(p.id)">🚮</button></td>
-      <td><button>realizar pago</button></td>
+      <td><button (click)="pagar()">realizar pago</button></td>
     </tr>
   }
 </tbody>

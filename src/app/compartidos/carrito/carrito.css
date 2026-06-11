@@ -1,0 +1,209 @@
+/* ==========================================
+   ESTILOS GENERALES Y CONTENEDOR
+   ========================================== */
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Estilo para el texto cuando el carrito está vacío */
+p {
+  font-size: 1.25rem;
+  color: #64748b;
+  text-align: center;
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 2px dashed #cbd5e1;
+  max-width: 600px;
+  margin: 40px auto;
+}
+
+/* Contenedor principal de la tabla */
+.table {
+  width: 100%;
+  max-width: 1200px;
+  margin: 30px auto;
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+  overflow: hidden; /* Para respetar los bordes redondeados */
+}
+
+/* ==========================================
+   ENCABEZADO DE LA TABLA (THEAD)
+   ========================================== */
+.table thead {
+  background-color: #0f172a; /* Azul muy oscuro/negro elegante */
+}
+
+.table thead th {
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 18px 12px;
+  text-align: center;
+  border: none;
+}
+
+/* Botón "Vaciar carrito" en el encabezado */
+.table thead th button {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+.table thead th button:hover {
+  background-color: #ef4444;
+  color: #ffffff;
+  border-color: #ef4444;
+}
+
+/* ==========================================
+   CUERPO DE LA TABLA (TBODY)
+   ========================================== */
+.table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.table tbody tr:hover {
+  background-color: #f8fafc; /* Efecto sutil al pasar el mouse */
+}
+
+/* Estilos comunes para todas las celdas del cuerpo */
+.table tbody th, 
+.table tbody td {
+  padding: 16px 12px;
+  vertical-align: middle;
+  text-align: center;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+  font-size: 0.95rem;
+}
+
+/* Celda de la Imagen (Primer TH del tbody) */
+.table tbody tr th:first-child {
+  width: 90px;
+}
+
+.table tbody img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Celda del Nombre del producto (Segundo TH del tbody) */
+.table tbody th[scope="row"] {
+  font-weight: 600;
+  color: #0f172a;
+  text-align: left; /* Nombre alineado a la izquierda para mejor lectura */
+  min-width: 150px;
+}
+
+/* Formateo de precio y total para que resalten */
+.table tbody td:nth-child(2) {
+  font-weight: 500;
+}
+
+.table tbody td:nth-child(4) {
+  font-weight: 700;
+  color: #0f172a;
+  font-size: 1.05rem;
+}
+
+/* ==========================================
+   CONTROLES DE CANTIDAD (Columnas 3, 4 y 5 del HTML)
+   ========================================== */
+/* Botones de + y - */
+.table tbody td button[type="button"] {
+  background-color: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.table tbody td button[type="button"]:hover {
+  background-color: #e2e8f0;
+  color: #0f172a;
+  border-color: #94a3b8;
+}
+
+/* Número de la cantidad (Columna del medio) */
+.table tbody td:nth-child(4) {
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 16px 4px;
+}
+
+/* ==========================================
+   BOTONES DE ACCIÓN (Eliminar y Pagar)
+   ========================================== */
+
+/* Botón Eliminar (Tacho de basura 🚮) */
+.table tbody td:nth-child(6) button {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.table tbody td:nth-child(6) button:hover {
+  background-color: #fee2e2;
+  transform: scale(1.1);
+}
+
+/* Botón Realizar Pago individual */
+.table tbody td:nth-child(7) button {
+  background-color: #10b981; /* Verde esmeralda llamativo */
+  color: #ffffff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.2);
+  transition: all 0.2s ease;
+}
+
+.table tbody td:nth-child(7) button:hover {
+  background-color: #059669;
+  box-shadow: 0 6px 12px -2px rgba(16, 185, 129, 0.3);
+  transform: translateY(-1px);
+}
+
+.table tbody td:nth-child(7) button:active {
+  transform: translateY(0);
+}

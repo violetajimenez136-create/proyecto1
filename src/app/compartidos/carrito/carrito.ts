@@ -31,5 +31,8 @@ this.carritoS.obtenerProducto();
 vaciarCarrito(){
 this.productosCarrito = []
 }
+    pagar(): void {
+    alert('gracias por su compra');
+  }
 }
 
