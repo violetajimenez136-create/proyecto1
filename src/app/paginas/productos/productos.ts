@@ -5,7 +5,7 @@ import { carritoService } from '../../servicios/carritoService';
 import { Favoritos } from '../../servicios/favoritos';
 @Component({
   selector: 'app-productos',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './productos.html',
   styleUrl: './productos.css',
 })
@@ -105,8 +105,10 @@ export class Productos {
   ];
   agregaralcarrito(p: Producto){
     this.carritoS.aniadirProducto(p);
+    alert ("el producto se agrego al carrito")
   }
   agregarFavoritos(p: Producto){
     this.favoritosS.aniadirFav(p);
+    alert ("el producto se agrego a favoritos")
   }
 }

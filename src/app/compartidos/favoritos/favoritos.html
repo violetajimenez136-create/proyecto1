@@ -1,21 +1,24 @@
 @if(Favoritos.length === 0){
-  <p>el carrito esta vacio</p>
+  <div class="no-favoritos">
+    <p>No hay ningún producto favorito aún. ❤️</p>
+  </div>
 }@else{
-  <table class="table">                                                                                
-  <thead>
-    <tr>
-      <th scope="col">producto</th>
-      <th scope="col">precio</th>
-    </tr>
-  </thead>
-  <tbody>
+  <h3 class="titulo-seccion">Tus favoritos</h3>
+  
+  <div class="contenedor-cartas">
     @for(p of Favoritos; track p.id){
-    <tr>
-      <th scope="row">{{p.nombre}}</th>
-      <td><img src="assets/{p.imagen}" alt="p.nombre"></td>
-      <td><button (click)="eliminarFav(p.id)">🚮</button></td>
-    </tr>
-  }
-</tbody>
-</table>
+      <div class="carta">
+        <div class="imagen-contenedor">
+          <img src="assets/{{p.imagen}}" alt="{{p.nombre}}">
+        </div>
+        <div class="contenido-carta">
+          <h2>{{p.nombre}}</h2>
+          <button class="btn-aniadircarrito" (click)="aniadiralcarrito(p)">Añadir al carrito</button>
+          <button class="btn-eliminar" (click)="eliminarFav(p.id)" title="Eliminar de favoritos">
+            🚮 Eliminar
+          </button>
+        </div>
+      </div>
+    }
+  </div>
 }

@@ -39,7 +39,4 @@ export class carritoService {
   eliminarProducto(id: number): void {
     this.Carrito = this.Carrito.filter(p => p.id !== id);
   }
-    pagar(): void {
-    alert('gracias por su compra');
-  }
 }

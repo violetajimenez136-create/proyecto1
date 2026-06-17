@@ -1,21 +1,23 @@
 import { Component } from '@angular/core';
 import { Producto } from '../../models/producto';
 import { carritoService } from '../../servicios/carritoService';
+import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-favoritos',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './favoritos.html',
   styleUrl: './favoritos.css',
 })
 export class Favoritos {
 
   Favoritos: Producto[] = [];
-  constructor(private favoritos: carritoService) { }
+  constructor(private carritoService: carritoService) { }
   ngOnInit() {
-    this.Favoritos = this.favoritos.obtenerProducto();
+    this.Favoritos = this.carritoService.obtenerProducto();
   }
-  añadirFav(p: Producto): void {
-    this.Favoritos.push(p);
+  aniadiralcarrito(p: Producto): void {
+  alert ("producto agregado al carrito")
+  this.carritoService.aniadirProducto(p)
   }
 
   obtenerProducto(): Producto[] {
