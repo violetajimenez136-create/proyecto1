@@ -5,19 +5,19 @@ import { Producto } from '../models/producto';
 @Injectable({
   providedIn: 'root',
 })
-export class Favoritos {
-  Favoritos: Producto[] = [];
+export class favoritosService {
+  favoritos: Producto[] = [];
 
   aniadirFav(p: Producto): void {
-    this.Favoritos.push(p);
+    this.favoritos.push(p);
   }
 
   obtenerProducto(): Producto[] {
-    return this.Favoritos;
+    return this.favoritos;
   }
 
   eliminarFav(id: number): void {
-    this.Favoritos = this.Favoritos.filter(p => p.id !== id);
+    this.favoritos = this.favoritos.filter(p => p.id !== id);
   }
 
 }

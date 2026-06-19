@@ -1,16 +1,15 @@
 import { Component } from '@angular/core';
 import { Producto } from '../../models/producto';
-import { RouterLink } from '@angular/router';
 import { carritoService } from '../../servicios/carritoService';
-import { Favoritos } from '../../servicios/favoritos';
+import { favoritosService } from '../../servicios/favoritosService';
 @Component({
   selector: 'app-productos',
-  imports: [RouterLink],
+  imports: [],
   templateUrl: './productos.html',
   styleUrl: './productos.css',
 })
 export class Productos {
-  constructor(private carritoS : carritoService, private favoritosS: Favoritos){}
+  constructor(private carritoS : carritoService, private favoritosS: favoritosService){}
   Productos : Producto [] = [
     { 
     id: 1,
