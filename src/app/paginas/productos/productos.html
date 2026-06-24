@@ -6,6 +6,7 @@
     <p>{{p.descripcion}}</p>
     <div class="card-body">
       <h5 class="card-title">{{p.nombre}}</h5>
+      <h5 class="card-title">${{p.precio}}</h5>
       <th><button class="btn-carrito" (click)="agregaralcarrito(p)">añadir al carrito</button></th>
       <th><button class="btn-favoritos" (click)="agregarFavoritos(p)">añadir a favoritos</button></th>
     </div>
