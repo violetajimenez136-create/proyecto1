@@ -21,6 +21,7 @@
       <th scope="row">{{p.nombre}}</th>
       <td> <button type="button" (click)="disminuirCantidad(p.id)">-</button></td>
       <td>{{p.cantidad}}</td>
+      <h5 class="card-title">${{p.precio}}</h5>
       <td> <button type="button" (click)="aumentarCantidad(p.id)">+</button></td>
       <td><button (click)="eliminarProducto(p.id)">🚮</button></td>
       <td><button (click)="pagar()">realizar pago</button></td>

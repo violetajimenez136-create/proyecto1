@@ -1,0 +1,114 @@
+/* Contenedor principal de las tarjetas */
+.cartasdeproductos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  justify-items: center;
+  background-color: #f8f9fa; /* Fondo gris muy claro para hacer contrastar las tarjetas */
+}
+
+/* La Tarjeta (Card) */
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e9ecef;
+}
+
+/* Efecto Hover para que el usuario sepa que es interactiva */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Imagen del producto */
+.card-img-top {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* Evita que la imagen se deforme */
+  border-bottom: 1px solid #e9ecef;
+}
+
+/* Descripción (texto secundario) */
+.card p {
+  font-size: 0.9rem;
+  color: #6c757d;
+  padding: 1rem 1.25rem 0 1.25rem;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Cuerpo de la tarjeta */
+.card-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: auto; /* Empuja el contenido hacia abajo si hay descripciones cortas */
+}
+
+/* Título del producto */
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #212529;
+  margin: 0 0 0.5rem 0;
+}
+
+/* Estilo base para los botones */
+.btn-carrito, .btn-favoritos {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-carrito:active, .btn-favoritos:active {
+  transform: scale(0.98); /* Pequeño efecto de pulsación */
+}
+
+/* Botón Añadir al Carrito (Acción Principal - Color llamativo) */
+.btn-carrito {
+  background-color: #007bff; /* Azul e-commerce estándar (puedes cambiarlo por tu color de marca) */
+  color: #ffffff;
+}
+
+.btn-carrito:hover {
+  background-color: #0056b3;
+}
+
+/* Botón Añadir a Favoritos (Acción Secundaria - Más discreto) */
+.btn-favoritos {
+  background-color: #f8f9fa;
+  color: #495057;
+  border: 1px solid #ced4da;
+}
+
+.btn-favoritos:hover {
+  background-color: #e2e6ea;
+  color: #212529;
+}
+/* ==========================================================================
+   4. Estilo Especial para el Precio (Segundo .card-title) en Negro
+   ========================================================================== */
+
+/* Apunta específicamente al segundo h5 con clase .card-title (el precio) */
+.cartasdeproductos .card-title:nth-of-type(2) {
+    font-size: 1.4rem;          /* Tamaño destacado */
+    color: #000000;             /* Color negro puro */
+    font-weight: 800;           /* Grosor extra para diferenciarlo del título */
+    letter-spacing: 0px;        /* Sin espaciado de letras */
+    text-transform: none;       /* Respeta el formato original del texto */
+    margin-top: 5px;            /* Separación con el nombre del producto */
+    margin-bottom: 15px;        /* Espacio limpio antes de los botones */
+    display: block;
+}

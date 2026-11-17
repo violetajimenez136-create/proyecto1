@@ -1,3 +1,5 @@
+import { Productos} from "../paginas/productos/productos";
+
 export interface Producto{
     id: number;
     nombre: string;

@@ -1,4 +1,5 @@
 <div class="cartasdeproductos">
+<<<<<<< HEAD
   @for (p of productos; track p.id) {
     @if (p.disponibilidad) {
       <div class="card" style="width: 18rem;">
@@ -11,5 +12,20 @@
         </div>
       </div>
     }
+=======
+  @for(p of Productos; track p.id){
+  @if (p.disponibilidad){
+  <div class="card" style="width: 18rem;">
+    <img src="assets/{{p.imagen}}" class="card-img-top" alt="..." id="">
+    <p>{{p.descripcion}}</p>
+    <div class="card-body">
+      <h5 class="card-title">{{p.nombre}}</h5>
+      <h5 class="card-title">${{p.precio}}</h5>
+      <th><button class="btn-carrito" (click)="agregaralcarrito(p)">añadir al carrito</button></th>
+      <th><button class="btn-favoritos" (click)="agregarFavoritos(p)">añadir a favoritos</button></th>
+    </div>
+  </div>
+}
+>>>>>>> bc4fe784cd0afecb41077758701adc720b0aed8b
   }
 </div>

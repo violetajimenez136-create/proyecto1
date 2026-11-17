@@ -13,6 +13,7 @@
         </div>
         <div class="contenido-carta">
           <h2>{{p.nombre}}</h2>
+          <h5 class="card-title">${{p.precio}}</h5>
           <button class="btn-aniadircarrito" (click)="aniadiralcarrito(p)">Añadir al carrito</button>
           <button class="btn-eliminar" (click)="eliminarFav(p.id)" title="Eliminar de favoritos">
             🚮 Eliminar

@@ -207,3 +207,14 @@ p {
 .table tbody td:nth-child(7) button:active {
   transform: translateY(0);
 }
+/* Centrar y alinear verticalmente el precio infiltrado dentro de la fila */
+.table tbody tr .card-title {
+  display: table-cell;       /* Fuerza al h5 a comportarse como un <td> */
+  vertical-align: middle;    /* Lo centra perfectamente a la altura de los demás */
+  text-align: center;        /* Lo centra horizontalmente */
+  padding: 16px 12px;        /* Mismo espacio interno que las celdas de la tabla */
+  margin: 0;                 /* Elimina los márgenes por defecto del h5 */
+  font-size: 0.95rem;        /* Aplica el tamaño de fuente del resto de la tabla */
+  font-weight: 500;          /* Estilo de texto limpio */
+  color: #334155;
+}
