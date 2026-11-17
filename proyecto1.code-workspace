@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../basededatosBootArt"
+		},
+		{
+			"path": "../node_modules"
+		}
+	]
+}

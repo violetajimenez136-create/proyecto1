@@ -1,1 +1,25 @@
 <p>iniciosesion works!</p>
+<!-- Campo donde el usuario ingresa su correo electrónico. --> 
+<!-- [(ngModel)]="email" vincula el valor del campo con la 
+     variable email del componente TypeScript. --> 
+<input [(ngModel)]="email" placeholder="Email"> 
+ 
+<!-- Campo donde el usuario ingresa su contraseña. --> 
+<!-- [(ngModel)]="contraseña" vincula el valor ingresado con 
+     la variable contraseña del componente. --> 
+<!-- type="password" oculta los caracteres de la contraseña. --> 
+<input [(ngModel)]="contraseña" type="password" placeholder="Contraseña"> 
+ 
+<!-- Al hacer clic en el botón, se ejecuta el método ingresar() 
+     definido en inicio-sesion.component.ts. --> 
+<button (click)="ingresar()">Ingresar</button> 
+ 
+<!-- @if comprueba si la variable error tiene contenido. 
+     Si contiene un mensaje, se muestra el párrafo siguiente. --> 
+@if (error) { 
+ 
+  <!-- Muestra el mensaje de error guardado en la variable error. 
+       La clase CSS error permite aplicar estilos al mensaje. --> 
+  <p class="error">{{ error }}</p> 
+ 
+}
