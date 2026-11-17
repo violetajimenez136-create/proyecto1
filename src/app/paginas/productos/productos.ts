@@ -1,7 +1,7 @@
 
 import { Component, OnInit } from "@angular/core";
-import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
+import { CommonModule } from "@angular/common";
 
 import { Product } from "../../servicios/product";
 import { carritoService } from "../../servicios/carritoService";
@@ -12,9 +12,10 @@ import { Producto } from "../../models/producto";
   selector: "app-productos",
   standalone: true,
   imports: [FormsModule, CommonModule],
-  templateUrl: "./productos.html"
+  templateUrl: "./productos.component.html"
 })
-export class Productos implements OnInit {
+export class ProductosComponent implements OnInit {
+
   productos: Producto[] = [];
   buscar = "";
 
@@ -39,13 +40,16 @@ export class Productos implements OnInit {
     });
   }
 
-  agregaralcarrito(producto: Producto): void {
-    this.carrito.aniadirProducto(producto);
-    alert("Producto agregado al carrito");
+  agregar(idProducto: number): void {
+    this.carrito.agregar(idProducto, 1).subscribe({
+      next: () => alert("Producto agregado al carrito"),
+      error: (error) => console.error("Error al agregar al carrito:", error)
+    });
   }
-
-  agregarFavoritos(producto: Producto): void {
-    this.favoritoService.aniadirFav(producto);
-    alert("Producto agregado a favoritos");
+  favorito(idProducto: number): void {
+    this.favoritoService.agregar(idProducto).subscribe({
+      next: () => alert("Producto agregado a favoritos"),
+      error: (error) => console.error("Error al agregar a favoritos:", error)
+    });
   }
 }
